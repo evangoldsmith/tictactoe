@@ -1,3 +1,28 @@
-* {
+body {
     background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+.gameboard {
+    background-color: darkgrey;
+    padding: 10px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.cell {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

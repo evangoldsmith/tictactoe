@@ -1,16 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Indie+Flower&display=swap');
+:root {
+    --primary: #581c87;
+    --secondary: #c084fc;
+    --alt: #a855f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
 body {
-    background-color: purple;
+    background-color: var(--primary);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 4rem;
     height: 100vh;
 }
 
+
+/* Header/Selection Section */
+.header {
+    font-size: 5rem;
+}
+
+.line-text {
+    font-weight: 900;
+    color: #e9d5ff;
+    
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: #d8b4fe;
+    --stroke-color: #8f68ce;
+    
+    text-shadow: 
+      
+      var(--x-offset)
+      var(--y-offset)
+      0px
+      var(--background-color), 
+      
+      calc( var(--x-offset) - var(--stroke) )
+      calc( var(--y-offset) + var(--stroke) )
+      0px
+      var(--stroke-color);    
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.option-select {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 1rem;
+    transition: .2s ease;
+    box-shadow: #1a0240 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: var(--alt);
+
+}
+
+button:active{
+    transition: .2s ease;
+    box-shadow: none;
+    transform: translateY(7px);
+}
+
+.btn {
+    padding: 1.5rem;
+    width: 12rem;
+    font-size: 18px;
+}
+
+.name {
+    margin-top: 2rem;
+    padding: 3rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--secondary);
+    border-radius: 4px;
+    max-height: 0;
+    transition: .2s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    opacity: 0;
+    transition: .8s ease;
+}
+
+input {
+    border: none;
+    border-radius: 8px;
+    background-color: #e9d5ff;
+    height: 2rem;
+    padding: 5px;
+    font-size: 17px;
+}
+
+#start-btn {
+    width: 9rem;
+    height: 2rem;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+/* Gameboard */
 .gameboard {
-    background-color: darkgrey;
+    background-color: var(--secondary);
     padding: 10px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    border-radius: 4px;
+    box-shadow: #1a0240 0px 8px 24px;    
+    width: 15.39rem;
+    transition: .8s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .cell {
@@ -21,6 +150,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.win-message {
+    color: white;
+    transition: .5s ease;
 }
 
 
